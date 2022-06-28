@@ -10,20 +10,23 @@
       Please let us know how we did with your support request. All feedback is appreciated to help us improve our
       offering!
     </p>
-    <ul class="card__rating">
-      <li class="dot dot--selector">1</li>
-      <li class="dot dot--selector">2</li>
-      <li class="dot dot--selector">3</li>
-      <li class="dot dot--selector">4</li>
-      <li class="dot dot--selector">5</li>
-    </ul>
-    <button class="button">
-      Submit
-    </button>
+    <form>
+      <div class="card__rating">
+        <RadioInput v-for="n in 5" :n="n" :key="n">
+        </RadioInput>
+      </div>
+      <button type="submit" class="button">
+        Submit
+      </button>
+    </form>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<script setup>
+import RadioInput from './RadioInput.vue';
+</script>
+
+<style lang="scss">
 .card {
   background-color: darken($color: $color-neutral-Dark-Blue, $amount: 5);
   height: 415px;
@@ -54,17 +57,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &--selector {
-    cursor: pointer;
-    font-weight: 700;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      background-color: $color-primary-Orange;
-      color: $color-neutral-White;
-    }
-  }
 }
 
 .button {
@@ -90,6 +82,4 @@
     color: $color-primary-Orange;
   }
 }
-
-
 </style>
