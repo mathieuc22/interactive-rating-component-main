@@ -1,12 +1,11 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Rating from './components/Rating.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <Rating />
 </template>
 
 <style lang="scss">
@@ -15,5 +14,9 @@ import HelloWorld from './components/HelloWorld.vue'
   font-size: $font-size-default;
   font-weight: $font-weight-default;
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
