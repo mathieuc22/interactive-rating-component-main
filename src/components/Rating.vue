@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div v-if="!modal" class="card">
     <div class="dot">
       <img src="../assets/icon-star.svg" alt="">
     </div>
@@ -10,20 +10,27 @@
       Please let us know how we did with your support request. All feedback is appreciated to help us improve our
       offering!
     </p>
-    <form>
+    <form @submit.prevent novalidate>
       <div class="card__rating">
-        <RadioInput v-for="n in 5" :n="n" :key="n">
+        <RadioInput v-for="n in 5" :modelValue="n" :key="n" v-model="selectedValue">
         </RadioInput>
       </div>
-      <button type="submit" class="button">
+      <button @click="modal = !modal" class="button">
         Submit
       </button>
     </form>
   </div>
+  <ThankYou v-if="modal" :value="selectedValue" ></ThankYou>
+  
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import RadioInput from './RadioInput.vue';
+import ThankYou from './ThankYou.vue';
+
+let modal = ref(false)
+
 </script>
 
 <style lang="scss">
@@ -37,6 +44,11 @@ import RadioInput from './RadioInput.vue';
   flex-direction: column;
   justify-content: space-between;
 
+  &--centered {
+    align-items: center;
+    text-align: center;
+  }
+
   &__title {
     color: $color-neutral-White;
     font-size: 2em;
@@ -46,6 +58,17 @@ import RadioInput from './RadioInput.vue';
   &__rating {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__selection {
+    background-color: $color-neutral-Dark-Blue;
+    color: $color-primary-Orange;
+    border-radius: 25px;
+    padding: 6px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -67,7 +90,7 @@ import RadioInput from './RadioInput.vue';
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  height: 50px;
+  height: 45px;
   width: 100%;
   border-radius: 25px;
   border: none;

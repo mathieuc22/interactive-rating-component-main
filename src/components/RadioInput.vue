@@ -1,15 +1,15 @@
 <template>
-    <label :for="n">
-        <input type="radio" :id="n" name="rating" :value="n" />
-        <span class="dot">{{ n }}</span>
+    <label :for="modelValue">
+        <input type="radio" :id="modelValue" name="rating" :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)">
+        <span class="dot">{{ modelValue }}</span>
     </label>
 </template>
 
 <script setup>
 
-const props = defineProps({
-    n: Number
-})
+defineProps(['modelValue'])
+defineEmits(['update:modelValue'])
 
 </script>
 
