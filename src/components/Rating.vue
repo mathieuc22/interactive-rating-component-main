@@ -10,26 +10,38 @@
       Please let us know how we did with your support request. All feedback is appreciated to help us improve our
       offering!
     </p>
-    <form @submit.prevent novalidate>
+    <form class="card__form" @submit.prevent novalidate>
       <div class="card__rating">
         <RadioInput v-for="n in 5" :modelValue="n" :key="n" v-model="selectedValue">
         </RadioInput>
       </div>
-      <button @click="modal = !modal" class="button">
+      <button @click="showModal" class="button">
         Submit
       </button>
+      <ValidationError v-if="error"></ValidationError>
     </form>
   </div>
-  <ThankYou v-if="modal" :value="selectedValue" ></ThankYou>
-  
+  <ThankYou v-if="modal" :value="selectedValue"></ThankYou>
+
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import RadioInput from './RadioInput.vue';
 import ThankYou from './ThankYou.vue';
+import ValidationError from './ValidationError.vue';
 
-let modal = ref(false)
+const modal = ref(false)
+const error = ref(false)
+const selectedValue = ref('')
+
+function showModal() {
+  if (selectedValue.value) {
+    modal.value = !modal.value
+  } else {
+    error.value = !error.value
+  }
+}
 
 </script>
 
@@ -57,11 +69,15 @@ let modal = ref(false)
     margin-top: 20px;
   }
 
-  &__description { 
+  &__description {
     margin-bottom: 15px;
     line-height: 23px;
   }
 
+  &__form {
+    position: relative;
+  }
+  
   &__rating {
     display: flex;
     justify-content: space-between;
