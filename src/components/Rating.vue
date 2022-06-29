@@ -56,6 +56,11 @@ function showModal() {
   flex-direction: column;
   justify-content: space-between;
 
+  @media screen and (max-width: 768px) {
+    height: unset;
+    border-radius: 15px;
+  }
+
   &--centered {
     align-items: center;
     text-align: center;
@@ -77,7 +82,7 @@ function showModal() {
   &__form {
     position: relative;
   }
-  
+
   &__rating {
     display: flex;
     justify-content: space-between;
@@ -104,6 +109,12 @@ function showModal() {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    height: 40px;
+    width: 40px;
+  }
+
 }
 
 .button {

@@ -18,5 +18,10 @@ import Rating from './components/Rating.vue'
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 </style>
