@@ -35,11 +35,11 @@ let modal = ref(false)
 
 <style lang="scss">
 .card {
-  background-color: darken($color: $color-neutral-Dark-Blue, $amount: 5);
+  background-color: darken($color: $color-neutral-Dark-Blue, $amount: 3.5);
   height: 415px;
-  width: 410px;
-  border-radius: 25px;
-  padding: 32px;
+  width: 412px;
+  border-radius: 30px;
+  padding: 31px 39px 31px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,9 +50,16 @@ let modal = ref(false)
   }
 
   &__title {
+    margin-top: 10px;
     color: $color-neutral-White;
-    font-size: 2em;
+    font-size: 1.85em;
     font-weight: 700;
+    margin-top: 20px;
+  }
+
+  &__description { 
+    margin-bottom: 15px;
+    line-height: 23px;
   }
 
   &__rating {
@@ -62,6 +69,7 @@ let modal = ref(false)
   }
 
   &__selection {
+    margin-top: 35px;
     background-color: $color-neutral-Dark-Blue;
     color: $color-primary-Orange;
     border-radius: 25px;
