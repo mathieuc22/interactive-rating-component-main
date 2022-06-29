@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub repo](https://github.com/mathieuc22/product-preview-card-component-main)
-- Live Site URL: [GitHub Pages](https://mathieuc22.github.io/product-preview-card-component-main/)
+- Solution URL: [GitHub repo](https://github.com/mathieuc22/interactive-rating-component-main)
+- Live Site URL: [GitHub Pages](https://mathieuc22.github.io/interactive-rating-component-main/)
 
 ## My process
 
