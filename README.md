@@ -25,13 +25,13 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- [<img src="./Screenshot_desktop.png" height="450px"/>](./Screenshot_desktop.png)
+[<img src="./Screenshot_desktop.png" height="450px"/>](./Screenshot_desktop.png)
 
 [<img src="./Screenshot_hover.png" height="450px"/>](./Screenshot_hover.png)
 
 [<img src="./Screenshot_thankyou.png" height="450px"/>](./Screenshot_thankyou.png)
 
-[<img src="./Screenshot_mobile.png" height="450px"/>](./Screenshot_mobile.png) -->
+[<img src="./Screenshot_mobile.png" height="450px"/>](./Screenshot_mobile.png)
 
 ### Links
 
